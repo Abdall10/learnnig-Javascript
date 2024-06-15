@@ -1,0 +1,165 @@
+// Function 
+// Function occepts parameter
+function sayHello(userName , age){   // Variable
+    if(age < 20){
+        console.log(`App is Not Suitable For You`)
+    } else {
+        console.log(`Hello ${userName} Your Age is : ${age}`);
+    }
+}
+
+sayHello("Ahmed", 38);  //value
+sayHello("Sayed", 40);
+sayHello("Ali", 18);
+
+function generateYears (start, end, exclude){
+  for (let i = start; i <= end; i++){
+    if (i === exclude){
+        continue;
+    }
+    console.log(i);
+  }
+}
+generateYears(1982,2024,2020) //write the years from 1982 to 2024 except the year 2020
+
+//////////////////////
+// Function Return
+function calc(num1 , num2 ){   // Variable
+    return num1 +num2 ;
+ }
+ 
+ let result = calc(10,20);
+ console.log(result +100); // result =10 +20 =30 + 100 = 130
+
+ ///////////////////////////
+
+ // Function Return
+function generate(start , end ){   // Variable
+    for (let i = start; i <= end; i++){
+        if(i === 15){
+            return `Interruptting`;
+        }
+         console.log(i)
+    }
+}
+generate(10,20);
+
+///////////////////////////////////
+// Default Function Parameters
+function sayhello(username = " Unknown "  , Age = " Unknown " ){  
+    // if (Age === undefined){
+    //     Age = "Unknown";
+    // } 
+   // Age = Age || " Unknown " ;
+     return `Hello ${username} Your Age is : ${Age}`;
+ }
+ console.log(sayhello("Ahmed"));  // Hello Ahmed Your Age is : Unknown
+
+ ///////////////////////////////////////////
+ //  Function Rest Parameters
+function calcs(...numbers){       // Mast used only one Rest Parameters 
+
+    let resu = 0;
+    for(let i=0; i<numbers.length; i++) {
+        console.log(numbers[i]);
+
+        resu += numbers[i] // resu = resu+ numbers[i]
+    }
+    return `Final Result Is ${resu}`;
+}
+
+console.log(calcs(10,20,10,30,50))
+
+///////////////////////////////
+
+//  Function Advanced Parameters
+function showInfo(us = "Un", ag ="Un", rt =0 , show  = "Yes" , ...sk) {
+    document.write(`<div>`);
+    document.write(`<h2>Welcome, ${us}</h2>`);
+    document.write(`<p>Age is :  ${ag}</p>`);
+    document.write(`<p>Hour Rate is :  $${rt}</p>`);
+    if(show === "Yes"){
+        if(sk.length > 0 ){
+            document.write(`<p>Skills ${sk.join(" | ")}</p>`);
+        }else{
+            document.write(`<p>Skills: No Skills</p>`);
+        }
+    }else {
+        document.write(`<p> Skills Is Hidden </p>`);
+    }
+    document.write(`</div>`);
+   
+}
+showInfo("Ahmed",30,20,"No", "Html","Css");
+
+/////////////////////////////////////////////////
+
+//  Anonymous Function
+
+let calculator = function cl(n1,n2){
+    return n1+n2;
+ };
+ 
+ console.log(calculator(20,20));
+ function Hello(){
+     console.log("Hello Ahmed")
+ }
+ 
+ document.getElementById("show").onclick = Hello;
+ 
+ setTimeout(function en() {
+     console.log("Good");
+ }, 2000 );
+
+ ///////////////////////////////////////////////////////////
+ //  Inside Function
+
+//function sayMassage(fName, lName){
+//    let massage = 'Hello';
+//
+//    function concatMsg(){
+//        massage = `${massage} ${fName} ${lName}`;
+//    }
+//    concatMsg();
+//    return massage;
+//}
+
+//console.log(sayMassage("Ahmed","Ali"))
+
+//Example 2 
+
+//function sayMassage(fName, lName){
+//    let massage = 'Hello';
+//
+//    function concatMsg(){
+//        return `${massage} ${fName} ${lName}`;
+//    }
+//    return concatMsg();
+//}
+//
+//console.log(sayMassage("Ahmed","Ali"));
+
+//Example 3
+function sayMassage(fName, lName){
+    let massage = 'Hello';
+
+    function concatMsg(){
+        function getFullName() {
+            return ` ${fName} ${lName}`
+        }
+        return `${massage} ${getFullName()}`;
+    }
+    return concatMsg(); // return : Hello  Ahmed Ali
+}
+console.log(sayMassage("Ahmed" , "Ali"));
+
+///////////////////////////////////////////////////////
+//Arrow Function
+// if two Parameters or more must be used ( )
+let print = (num4,num6) => num4+num6; 
+
+console.log(print(100,50));
+
+//////////////////////////////////////////////////////
+
+
